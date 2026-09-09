@@ -1,0 +1,226 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    direction: rtl;
+}
+
+.game-container {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.game-header {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: white;
+    padding: 20px;
+}
+
+.game-header h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+.score-board {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.team {
+    text-align: center;
+    flex: 1;
+}
+
+.team h2 {
+    font-size: 14px;
+    margin-bottom: 8px;
+    opacity: 0.9;
+}
+
+.score {
+    font-size: 48px;
+    font-weight: bold;
+    color: #ffd700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.divider {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffd700;
+    margin: 0 15px;
+}
+
+.timer {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffd700;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.game-field {
+    background: linear-gradient(to bottom, #2d5016 0%, #3d6b1f 100%);
+    border: 3px solid #1a3d0a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 2/3;
+    position: relative;
+    overflow: hidden;
+}
+
+#gameCanvas {
+    display: block;
+    background: linear-gradient(to bottom, #2d5016 0%, #3d6b1f 100%);
+    border: 2px solid white;
+    cursor: pointer;
+    max-width: 100%;
+    height: auto;
+}
+
+.game-controls {
+    display: flex;
+    gap: 10px;
+    padding: 15px;
+    background: #f5f5f5;
+    flex-wrap: wrap;
+}
+
+.btn {
+    flex: 1;
+    min-width: 100px;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: white;
+}
+
+.btn-start {
+    background: linear-gradient(135deg, #00c851 0%, #008040 100%);
+}
+
+.btn-start:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0, 200, 81, 0.3);
+}
+
+.btn-pause {
+    background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
+}
+
+.btn-pause:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(255, 152, 0, 0.3);
+}
+
+.btn-reset {
+    background: linear-gradient(135deg, #f44336 0%, #d32f2f 100%);
+}
+
+.btn-reset:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(244, 67, 54, 0.3);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.instructions {
+    padding: 20px;
+    background: #f9f9f9;
+    border-top: 2px solid #e0e0e0;
+}
+
+.instructions h3 {
+    color: #1e3c72;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.instructions ul {
+    list-style: none;
+    font-size: 13px;
+    color: #555;
+    line-height: 1.8;
+}
+
+.instructions li {
+    padding: 5px 0;
+    padding-right: 15px;
+}
+
+.instructions strong {
+    color: #2a5298;
+}
+
+/* الألوان والتأثيرات الإضافية */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* جعل اللعبة متوافقة مع الهواتف */
+@media (max-width: 480px) {
+    .game-header h1 {
+        font-size: 24px;
+    }
+    
+    .score {
+        font-size: 40px;
+    }
+    
+    .btn {
+        min-width: 80px;
+        padding: 10px 12px;
+        font-size: 12px;
+    }
+    
+    .instructions {
+        padding: 15px;
+    }
+    
+    .instructions h3 {
+        font-size: 14px;
+    }
+    
+    .instructions ul {
+        font-size: 12px;
+    }
+}

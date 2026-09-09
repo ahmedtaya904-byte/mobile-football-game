@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لعبة كرة القدم - Football Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <h1>⚽ لعبة كرة القدم</h1>
+            <div class="score-board">
+                <div class="team team-left">
+                    <h2>الفريق الأول</h2>
+                    <div class="score" id="score1">0</div>
+                </div>
+                <div class="divider">VS</div>
+                <div class="team team-right">
+                    <h2>الفريق الثاني</h2>
+                    <div class="score" id="score2">0</div>
+                </div>
+            </div>
+            <div class="timer" id="timer">45:00</div>
+        </div>
+
+        <div class="game-field">
+            <canvas id="gameCanvas" width="400" height="600"></canvas>
+        </div>
+
+        <div class="game-controls">
+            <button class="btn btn-start" id="startBtn">▶ ابدأ اللعبة</button>
+            <button class="btn btn-pause" id="pauseBtn">⏸ إيقاف</button>
+            <button class="btn btn-reset" id="resetBtn">🔄 إعادة تعيين</button>
+        </div>
+
+        <div class="instructions">
+            <h3>طريقة اللعب:</h3>
+            <ul>
+                <li>استخدم <strong>الأسهم</strong> أو <strong>WASD</strong> للتحرك</li>
+                <li>اضغط <strong>SPACE</strong> للضربة</li>
+                <li>أرسل الكرة إلى مرمى الخصم</li>
+                <li>كل هدف = 1 نقطة</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
